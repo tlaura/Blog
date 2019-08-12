@@ -1,5 +1,8 @@
 import os
+from dotenv import load_dotenv
+
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'nobody-knows'
@@ -18,5 +21,9 @@ class Config(object):
     POSTS_PER_PAGE = 25
 
     LANGUAGES = ['en', 'de']
+
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+
+    REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'
 
     
