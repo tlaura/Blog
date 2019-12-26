@@ -39,4 +39,5 @@ nosetests.xml
 env
 app.db
 myblog.log
-blog.env
+.env
+.flaskenv
